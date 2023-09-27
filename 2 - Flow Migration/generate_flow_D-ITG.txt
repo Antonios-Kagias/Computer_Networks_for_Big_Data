@@ -1,0 +1,64 @@
+#### Donwload D-ITG
+
+sudo apt-get install unzip
+sudo apt-get install g++
+wget https://traffic.comics.unina.it/software/ITG/codice/D-ITG-2.8.1-r1023-src.zip --no-check-certificate
+unzip  D-ITG-2.8.1-r1023-src.zip
+cd  D-ITG-2.8.1-r1023/src
+make
+
+
+#### Run test
+
+1. Ξεκίνημα mininet
+2. Δημιουργία δικτύου
+3. Προσθήκη κανόνων στο 2ο terminal
+
+
+4. Τώρα στο 1ο terminal:
+xterm h1
+xterm h5
+
+Θα ανοίξουν 2 καινούργια παράθυρα
+
+Στο xterm του h5 πρώτα:
+cd D-ITG-2.8.1-r1023/bin
+./ITGRecv
+
+Στο xterm του h1:
+cd D-ITG-2.8.1-r1023/bin
+./ITGSend –T UDP –a 10.0.0.5 –c 100 –C 10 –t 60000 -l sender.log –x receiver.log
+
+### This way ITGSend will generate one UDP flow with constant payload size (100 bytes) and constant packet
+### rate (10 pps) for 60 seconds (60000 ms) and two packet-level log files will be generated both on sender (-l
+### option) and receiver (-x option) side.
+
+
+5. Μόλις τελειώσει το flow:
+
+Στο xterm του h1:
+./ITGDec sender.log -j 1000
+
+Στο xterm του h5 (χρειάζεται πρώτα Ctrl-C):
+./ITGDec receiver.log -c 1000
+(time, bitrate, delay, jitter, package loss)
+
+
+
+
+
+
+
+### h4 --> h11
+xterm h4
+xterm h11
+
+h11:
+cd D-ITG-2.8.1-r1023/bin
+./ITGRecv
+
+h4:
+cd D-ITG-2.8.1-r1023/bin
+./ITGSend –T UDP –a 10.0.0.11 –c 100 –C 10 –t 60000 -l sender.log –x receiver.log
+----------------------------------------------------------------------------------
+./ITGDec receiver.log -c 1000
