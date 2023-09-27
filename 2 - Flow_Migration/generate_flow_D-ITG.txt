@@ -10,12 +10,14 @@ make
 
 #### Run test
 
-1. Start mininet
-2. Create network
-3. Add rules in the 2nd terminal
+1. Start mininet and create network
+# Set network
+sudo mn --custom mininet/custom/AbilineTopo.py --topo abilinetopo --mac --arp --switch ovsk --controller remote --link tc
+
+2. Add rules in the 2nd terminal
 
 
-4. In the 1st terminal:
+3. In the 1st terminal:
 xterm h1
 xterm h5
 
@@ -34,7 +36,7 @@ cd D-ITG-2.8.1-r1023/bin
 ### option) and receiver (-x option) side.
 
 
-5. When the flow is over:
+4. When the flow is over:
 
 In h1 xterm:
 ./ITGDec sender.log -j 1000
@@ -45,7 +47,7 @@ In h5 xterm (you will need Ctrl-C first):
 
 
 
-
+------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
