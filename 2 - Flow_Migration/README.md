@@ -2,7 +2,7 @@
 
 - The folder 'flows' contains all the commands necessary for the forwarding rules to be installed.
 
-- The 'combined_stats' files contain the metrics recorded for each flow.
+- The folder 'combined_stats' contains the metrics recorded for each flow.
 
 - The hw03.pdf file contains a description of the work process, results and commentary.
 
