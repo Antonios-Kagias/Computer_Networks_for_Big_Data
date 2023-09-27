@@ -10,22 +10,24 @@ make
 
 #### Run test
 
-1. Ξεκίνημα mininet
-2. Δημιουργία δικτύου
-3. Προσθήκη κανόνων στο 2ο terminal
+1. Start mininet and create network
+# Set network
+sudo mn --custom mininet/custom/AbilineTopo.py --topo abilinetopo --mac --arp --switch ovsk --controller remote --link tc
+
+2. Add rules in the 2nd terminal
 
 
-4. Τώρα στο 1ο terminal:
+3. In the 1st terminal:
 xterm h1
 xterm h5
 
-Θα ανοίξουν 2 καινούργια παράθυρα
+This will open 2 new windows (xterm)
 
-Στο xterm του h5 πρώτα:
+In h5 xterm first:
 cd D-ITG-2.8.1-r1023/bin
 ./ITGRecv
 
-Στο xterm του h1:
+Then in h1 xterm:
 cd D-ITG-2.8.1-r1023/bin
 ./ITGSend –T UDP –a 10.0.0.5 –c 100 –C 10 –t 60000 -l sender.log –x receiver.log
 
@@ -34,22 +36,22 @@ cd D-ITG-2.8.1-r1023/bin
 ### option) and receiver (-x option) side.
 
 
-5. Μόλις τελειώσει το flow:
+4. When the flow is over:
 
-Στο xterm του h1:
+In h1 xterm:
 ./ITGDec sender.log -j 1000
 
-Στο xterm του h5 (χρειάζεται πρώτα Ctrl-C):
+In h5 xterm (you will need Ctrl-C first):
 ./ITGDec receiver.log -c 1000
 (time, bitrate, delay, jitter, package loss)
 
 
 
+------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-
-### h4 --> h11
+### Example: h4 --> h11 flow
 xterm h4
 xterm h11
 
