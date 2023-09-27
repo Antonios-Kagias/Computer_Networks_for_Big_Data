@@ -1,4 +1,4 @@
-- The 'combined_stats' folder contains the metrics recorded for each flow.
+- The 'combined_stats' folder contains the metrics recorded for each flow. The 4 columns stand for Time (sec), Bitrate, Delay, Jitter and Package Loss.
 
 - The 'flows' folder contains all the commands necessary for the forwarding rules to be installed.
 
