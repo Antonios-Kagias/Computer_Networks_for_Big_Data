@@ -1,8 +1,10 @@
-- The 'AbilineTopo.py' file is to create the network topology.
+- The 'combined_stats' folder contains the metrics recorded for each flow.
 
 - The 'flows' folder contains all the commands necessary for the forwarding rules to be installed.
 
-- The 'combined_stats' folder contains the metrics recorded for each flow.
+- The 'AbilineTopo.py' file is to create the network topology.
+
+- The 'generate_flow_D-ITG.txt' file contains information needed to generate traffic in the flow using D-ITG (https://traffic.comics.unina.it/software/ITG/)
 
 - The hw03.pdf file contains a description of the work process, results and commentary.
 
