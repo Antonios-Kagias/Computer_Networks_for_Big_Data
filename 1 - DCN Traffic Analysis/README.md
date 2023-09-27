@@ -1,4 +1,4 @@
-The Python program will open the 'trace.pcap' file. Path can be changed within the code if necessary.
+The Python program will open the 'trace.pcap' file (uploaded as zip). Path can be changed within the code if necessary.
 
 This project is about an analysis of network traffic in data centres based on trace in PCAP format and extraction of traffic characteristics in the form of distributions. It contains the following:
 
