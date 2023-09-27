@@ -4,7 +4,7 @@
 
 - The 'AbilineTopo.py' file is to create the network topology.
 
-- The 'generate_flow_D-ITG.txt' file contains information needed to generate traffic in the flow using D-ITG (https://traffic.comics.unina.it/software/ITG/)
+- The 'generate_flow_D-ITG.txt' file contains information needed to start Mininet, create the network and generate traffic using D-ITG (https://traffic.comics.unina.it/software/ITG/)
 
 - The hw03.pdf file contains a description of the work process, results and commentary.
 
